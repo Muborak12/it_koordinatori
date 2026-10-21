@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eshmurotova Kumushoy — 348-Maktab & Bektemir Tumani IT va AI Koordinatori</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            cyber: {
+              cyan: '#38BDF8',
+              teal: '#06B6D4',
+              violet: '#818CF8',
+              purple: '#A855F7',
+              dark: '#0B0F19',
+              slate: '#0F172A',
+              card: 'rgba(255, 255, 255, 0.75)',
+              cardDark: 'rgba(15, 23, 42, 0.75)'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            glow: {
+              '0%': { filter: 'drop-shadow(0 0 15px rgba(56, 189, 248, 0.3))' },
+              '100%': { filter: 'drop-shadow(0 0 35px rgba(168, 85, 247, 0.6))' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Glassmorphism & Cyber Gradients */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(129, 140, 248, 0.22);
+    }
+    .dark .glass-panel {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(56, 189, 248, 0.18);
+    }
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(129, 140, 248, 0.3);
+    }
+    .dark .glass-pill {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #9333ea 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .dark .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .mesh-bg {
+      background-color: #F8FAFF;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 10%, rgba(129, 140, 248, 0.18) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+        radial-gradient(at 80% 90%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+    }
+    .dark .mesh-bg {
+      background-color: #070B14;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 20%, rgba(129, 140, 248, 0.14) 0px, transparent 50%),
+        radial-gradient(at 50% 60%, rgba(168, 85, 247, 0.08) 0px, transparent 50%),
+        radial-gradient(at 10% 90%, rgba(6, 182, 212, 0.12) 0px, transparent 50%);
+    }
+    /* Ambient neon line indicators */
+    .neon-border {
+      position: relative;
+    }
+    .neon-border::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.6), rgba(129,140,248,0.1), rgba(168,85,247,0.5));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="mesh-bg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-500 min-h-screen selection:bg-indigo-500 selection:text-white">
+
+  <!-- Reading Progress Bar (Top) -->
+  <div class="fixed top-0 left-0 right-0 h-1.5 z-50 bg-slate-200/50 dark:bg-slate-800/50 backdrop-blur-sm">
+    <div id="progressBar" class="h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 transition-all duration-150 w-0 shadow-[0_0_12px_rgba(56,189,248,0.8)]"></div>
+  </div>
+
+  <!-- Floating Minimal HUD Controls (Nav & Dark Mode Toggle) -->
+  <header class="fixed top-6 left-1/2 -translate-x-1/2 z-40 w-11/12 max-w-5xl">
+    <nav class="glass-pill px-4 py-2.5 rounded-full shadow-lg shadow-indigo-500/10 flex items-center justify-between gap-3">
+      <!-- Brand Pill -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-atom animate-spin" style="animation-duration: 9s;"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-xs tracking-wider text-slate-900 dark:text-white leading-tight">348-MAKTAB</span>
+          <span class="text-[10px] text-indigo-600 dark:text-cyan-400 font-semibold tracking-tight">Bektemir IT & AI</span>
+        </div>
+      </a>
+
+      <!-- Quick Anchor Navigation (Desktop) -->
+      <div class="hidden lg:flex items-center gap-1 text-[13px] font-medium text-slate-600 dark:text-slate-300">
+        <a href="#hero" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">Bosh sahifa</a>
+        <a href="#missiya" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">Missiya</a>
+        <a href="#natijalar" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">Natijalar</a>
+        <a href="#transformatsiya" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">Vizion</a>
+        <a href="#ailab" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">AI Lab</a>
+        <a href="#bektemir" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">Tuman</a>
+        <a href="#ekotizim" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">Sinergiya</a>
+        <a href="#rejalar" class="px-3 py-1 rounded-full hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors">100 Kun</a>
+      </div>
+
+      <!-- Action & Dark Mode Toggle -->
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" aria-label="Dark/Light Mode" class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-cyan-300 hover:scale-105 active:scale-95 transition-all text-xs border border-slate-200 dark:border-slate-700 shadow-sm">
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#chaqiriq" class="text-xs font-semibold px-3.5 py-1.5 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white shadow-md shadow-indigo-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5">
+          <span>Qo'shiling</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="w-full overflow-hidden">
+
+    <!-- ==========================================
+         SECTION 1: HERO COVER
+         ========================================== -->
+    <section id="hero" class="relative min-h-screen pt-28 pb-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      <!-- Background Ambient Blobs -->
+      <div class="absolute top-1/4 left-1/10 w-72 h-72 bg-cyan-400/20 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+      <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-purple-400/20 dark:bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Hero Texts -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <!-- Eyebrow Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-xs sm:text-sm font-semibold text-indigo-700 dark:text-cyan-300 shadow-sm border border-indigo-200/50 dark:border-cyan-500/30">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <i class="fa-solid fa-microchip text-indigo-500 dark:text-cyan-400"></i>
+            <span>348-Maktab & Bektemir Tumani | IT va AI Koordinatori</span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight leading-[1.12]">
+            Kelajak Kodini Yozuvchilar: <br>
+            <span class="gradient-text">AI va IT: Yangi Avlod Tafakkuri</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+            Oddiy iste'molchilikdan — global sun'iy intellekt, algoritmik fikrlash va dasturiy yechimlar yaratuvchisiga aylanish yo'li.
+          </p>
+
+          <!-- Leader Profile Pill -->
+          <div class="p-4 sm:p-5 rounded-2xl glass-panel neon-border max-w-xl mx-auto lg:mx-0 shadow-lg shadow-indigo-500/5">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-xl shadow-md">
+                <i class="fa-solid fa-user-astronaut"></i>
+              </div>
+              <div class="text-left">
+                <div class="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-white">
+                  Eshmurotova Kumushoy
+                </div>
+                <div class="text-xs sm:text-sm text-indigo-600 dark:text-cyan-300 font-medium">
+                  IT va Sun'iy Intellekt Koordinatori Sardori
+                </div>
+              </div>
+            </div>
+            <!-- Bosh Shior Quote -->
+            <blockquote class="mt-3.5 pt-3 border-t border-slate-200/60 dark:border-slate-700/60 text-xs sm:text-sm italic text-slate-700 dark:text-slate-300 font-medium">
+              «Biz sun'iy intellektga shunchaki qoyil qolmaymiz — biz uni ezgu maqsadlarimizga, bilimimizga va xalqimiz rivojiga xizmat qildiruvchi vositaga aylantiramiz!»
+            </blockquote>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#missiya" class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-600 text-white font-semibold text-sm shadow-xl shadow-indigo-600/25 hover:shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">
+              <i class="fa-solid fa-compass"></i>
+              <span>Dastur bilan tanishish</span>
+            </a>
+            <a href="#natijalar" class="px-6 py-3 rounded-full glass-panel hover:bg-white/80 dark:hover:bg-slate-800 text-slate-800 dark:text-white font-semibold text-sm shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 border border-slate-300/70 dark:border-slate-700">
+              <i class="fa-solid fa-play text-cyan-500"></i>
+              <span>Jonli Natijalar</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image (AI Image 1: Eshmurotova Kumushoy editorial candid portrait) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none group">
+            <!-- Glow backdrop -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
+            
+            <div class="relative rounded-2xl overflow-hidden glass-panel border border-white/40 dark:border-cyan-500/30 shadow-2xl">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk96fMi8VDW03owL_VYtC94ZJJM9MECIHqZOBLIs1ejN3V3ufDuuVV93NedHwHgpnRUQ2L0PBd7gS0x8WZLR6Teobp0iHRTze9fQUYfLz1RzgMtBV9GIr3aQobqCSmjOWH2XVEuOAFaIpgDUrSzID93iJefzb4Yxq-gWtURS0L1etrbWNR-FjHX-NUzHmLkhk7hdXPpRKCGfdYA8YCGkvYBWgFOZmhFJZpWC_5fwa1O47Vwp5CXlVc" alt="Eshmurotova Kumushoy — IT va AI Sardori" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 aspect-[16/10]">
+              
+              <!-- Floating Glass Badge over image -->
+              <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl glass-panel backdrop-blur-xl border border-white/30 dark:border-slate-700 flex items-center justify-between">
+                <div>
+                  <p class="text-[11px] font-bold text-cyan-700 dark:text-cyan-300 tracking-wide uppercase">Innovatsion Yetakchi</p>
+                  <p class="text-xs font-semibold text-slate-900 dark:text-white">Eshmurotova Kumushoy</p>
+                </div>
+                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-600/10 dark:bg-cyan-500/20 text-indigo-700 dark:text-cyan-300 text-xs font-bold font-mono">
+                  <i class="fa-solid fa-code text-[11px]"></i>
+                  <span>AI & Dev</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: MEN HAQIMDA VA MISSİYAM
+         ========================================== -->
+    <section id="missiya" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-indigo-600 dark:text-cyan-400">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>Raqamli Yetakchilik</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Mening Maqsadim va Pozitsiyam
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            IT va sun'iy intellekt vositalarini o'quvchilar hayotiga amaliy, ijodiy va axloqiy me'yorlar bilan integratsiya qilishning 3 ta tayanchi.
+          </p>
+        </div>
+
+        <!-- 3-Column Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Card 1 -->
+          <div class="glass-panel p-7 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-indigo-500/5 border border-indigo-100 dark:border-slate-800">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <span class="text-[11px] font-mono font-bold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Tamoyil 01</span>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mt-1 mb-3">
+              Texnologiyani Demokratiyalashtirish
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              IT faqat tanlanganlar yoki yuqori sinflar uchun emas — 348-maktabdagi hamda Bektemir tumanidagi har bir o'quvchi dasturlash, sun'iy intellekt va zamonaviy kompyuter texnologiyalaridan teng, erkin va samarali foydalana olishi kerak.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-200/50 dark:border-slate-700/50 flex items-center text-xs font-semibold text-indigo-600 dark:text-cyan-400 gap-1.5">
+              <span>Barcha uchun teng imkoniyat</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 2 (Featured with Gradient accent) -->
+          <div class="glass-panel p-7 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-purple-500/10 border-2 border-indigo-300/40 dark:border-indigo-500/40">
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"></div>
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-300 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <span class="text-[11px] font-mono font-bold tracking-wider text-purple-600 dark:text-purple-400 uppercase">Tamoyil 02</span>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mt-1 mb-3">
+              Sun'iy Intellekt Madaniyati (AI Literacy)
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              Neyrotarmoqlardan tayyor vazifalarni shunchaki ko'chirib olish emas, balki chuqur o'rganish, savolni mukammal shakllantirish (Prompt Engineering), o'z loyihalarini yaratish va yangi g'oyalarni modellashtirish tafakkurini singdirish.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-200/50 dark:border-slate-700/50 flex items-center text-xs font-semibold text-purple-600 dark:text-purple-400 gap-1.5">
+              <span>Chuqur tushunish va ijod</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-panel p-7 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-indigo-500/5 border border-indigo-100 dark:border-slate-800">
+            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <span class="text-[11px] font-mono font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">Tamoyil 03</span>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mt-1 mb-3">
+              Qizlar Texnologiyada (Girls in Tech)
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              Maktabimiz va tumanimizdagi qizlar orasida IT, sun'iy intellekt, ma'lumotlar tahlili va algoritmik muhandislik sohalariga bo'lgan qiziqish va ishonchni oshirish, ularning kiber-yetakchilik salohiyatini to'liq namoyon qilish.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-200/50 dark:border-slate-700/50 flex items-center text-xs font-semibold text-indigo-600 dark:text-cyan-400 gap-1.5">
+              <span>Kelajak liderlari</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: AMALIY ISBOTLAR — JONLI IT NATIJALAR
+         ========================================== -->
+    <section id="natijalar" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>348-Maktabdagi Jonli IT Natijalar</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Biz Buni Qildik: Haqiqiy Loyihalar va Darslar
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            Quruq so'zlar emas, balki kompyuter sinfida o'tkazilgan real tajriba, amaliy natijalar va o'quvchilar ko'zidagi ishtiyoq.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Left: Real Photo Evidence (IMAGE 1: Uzbek students in modern lab) -->
+          <div class="lg:col-span-6 relative group">
+            <div class="relative rounded-3xl overflow-hidden glass-panel border border-indigo-200/50 dark:border-cyan-500/30 shadow-2xl">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRwy2w4UIpLyfD542oaBHrOZUB43-boLNLgdx-iuwkkuY2ZuwbhsguCF4RxPnsxVeZaB3eZWFq4MtA7J0eMlDttxlrpeLt5_rUb61V9InfJ_kkLY6e-KpRvof-hr63Xp7hwKYHHdkdx_xDr9RO-g6EDdIWVD1TWwGPh2ai6QDmE30Hc21lDdS997IZ67Jp1pQGZUA0yIBXcCKZ7CGUt8euBRtTwXtqgvPRM67fkDIkWmbww7IEJsw7" alt="348-maktab kompyuter sinfidagi amaliy dars" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 aspect-[4/3]">
+              
+              <!-- Floating stats over photo -->
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl glass-panel backdrop-blur-xl border border-white/40 dark:border-slate-700/60 flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-bold text-cyan-600 dark:text-cyan-300 uppercase tracking-wide">Amaliy laboratoriya</div>
+                  <div class="text-sm font-bold text-slate-900 dark:text-white">348-maktab Kompyuter Zali</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-xl font-extrabold font-mono text-indigo-600 dark:text-cyan-400">100%</div>
+                  <div class="text-[10px] text-slate-500 dark:text-slate-400">Amaliy darslar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Metrics & Cards -->
+          <div class="lg:col-span-6 space-y-6">
+            <!-- Card 1 -->
+            <div class="glass-panel p-6 sm:p-7 rounded-3xl border border-indigo-100 dark:border-slate-800 hover:border-cyan-400/50 transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">
+                    AI Prompt Engineering & Digital Tools
+                  </h3>
+                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1.5 leading-relaxed">
+                    O'quvchilarga ChatGPT, Claude, Midjourney va zamonaviy Stitch AI kabi neyrotarmoqlardan to'g'ri, samarali va professional savol berish (Prompting) bo'yicha maxsus mahorat darslari tashkil etildi.
+                  </p>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="text-[11px] px-2.5 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 font-mono font-medium">ChatGPT & Claude</span>
+                    <span class="text-[11px] px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-mono font-medium">Stitch AI</span>
+                    <span class="text-[11px] px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-mono font-medium">Prompt Engineering</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-panel p-6 sm:p-7 rounded-3xl border border-indigo-100 dark:border-slate-800 hover:border-purple-400/50 transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">
+                    Boshlang'ich Dasturlash & Web-Craft
+                  </h3>
+                  <p class="text-slate-600 dark:text-slate-300 text-sm mt-1.5 leading-relaxed">
+                    Frontend dasturlash asoslari (HTML/CSS/JS) va vizual no-code vositalari orqali har bir ishtirokchi o'zining ilk shaxsiy veb-sahifasi va interaktiv maktab loyihalarini muvaffaqiyatli ishga tushirdi.
+                  </p>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="text-[11px] px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono font-medium">HTML5 & CSS3</span>
+                    <span class="text-[11px] px-2.5 py-1 rounded-md bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 font-mono font-medium">JavaScript</span>
+                    <span class="text-[11px] px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-mono font-medium">Portfoliolar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Metric Counters -->
+            <div class="grid grid-cols-3 gap-3 pt-2">
+              <div class="glass-panel p-4 rounded-2xl text-center">
+                <div class="text-2xl font-black font-mono text-cyan-500">45+</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-1">O'quvchilar</div>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl text-center">
+                <div class="text-2xl font-black font-mono text-indigo-500">12+</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-1">Tayyor Saytlar</div>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl text-center">
+                <div class="text-2xl font-black font-mono text-purple-500">100%</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-1">Amaliyot</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: PARADIGMA TRANSFORMATSIYASI
+         ========================================== -->
+    <section id="transformatsiya" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-purple-600 dark:text-purple-400">
+            <i class="fa-solid fa-arrows-split-up-and-left"></i>
+            <span>Paradigma Transformatsiyasi</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Smartfondan — Kiber-Intellektga
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            Telefon va kompyuter o'yinlariga bo'lgan kuchli qiziqishni qanday qilib foydali ijodiy kuchga aylantirish mumkin?
+          </p>
+        </div>
+
+        <!-- Split Contrast Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <!-- Eski Yondashuv -->
+          <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-rose-300/40 dark:border-rose-900/40 relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-rose-500/10 rounded-full blur-2xl"></div>
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 text-xs font-bold mb-6">
+                <i class="fa-solid fa-ban"></i>
+                <span>Eski & Samarasiz Yondashuv</span>
+              </div>
+              <h3 class="text-2xl font-bold font-display text-slate-900 dark:text-white mb-4">
+                Taqiqlash va Ayblash
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                Telefonni qat'iy taqiqlash, o'yinlarni qoralash va texnologiyani ta'lim jarayonidan sun'iy tarzda ajratib qo'yish.
+              </p>
+              <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-xmark text-rose-500 text-base"></i>
+                  <span>O'quvchi texnologiyadan yashirincha foydalanadi</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-xmark text-rose-500 text-base"></i>
+                  <span>Vaqt shunchaki ijtimoiy tarmoqlarda behuda sarflanadi</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-xmark text-rose-500 text-base"></i>
+                  <span>O'quvchi faqat passiv iste'molchi bo'lib qoladi</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-rose-600 dark:text-rose-400 font-semibold">
+              Natija: Bilim cheklanadi, raqamli ko'nikma shakllanmaydi.
+            </div>
+          </div>
+
+          <!-- Yangi Raqamli Vizion -->
+          <div class="glass-panel p-8 sm:p-10 rounded-3xl border-2 border-cyan-400/60 dark:border-cyan-500/60 relative overflow-hidden flex flex-col justify-between shadow-2xl shadow-cyan-500/10">
+            <div class="absolute -right-10 -top-10 w-44 h-44 bg-cyan-500/15 rounded-full blur-2xl"></div>
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-300 text-xs font-bold mb-6">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Yangi Raqamli Vizion</span>
+              </div>
+              <h3 class="text-2xl font-bold font-display text-slate-900 dark:text-white mb-4">
+                Yaratuvchilikka Yo'naltirish (GameDev & Startap)
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                Bolalar o'ynaydigan o'yinlarni qanday yaratishni (Game Development) o'rgatish, ijtimoiy tarmoqlarni sifatli kontent, blog va IT-startaplar platformasiga aylantirish.
+              </p>
+              <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-200 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-cyan-500 text-base"></i>
+                  <span>Roblox va Unity orqali dasturlash mantig'ini o'rganish</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-cyan-500 text-base"></i>
+                  <span>AI yordamida o'z g'oyasining vizual dizayni va kodini yaratish</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i class="fa-solid fa-check text-cyan-500 text-base"></i>
+                  <span>Smartfonni ilm va daromad keltiruvchi qurolga aylantirish</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-4 border-t border-cyan-200 dark:border-cyan-900/60 text-xs text-cyan-600 dark:text-cyan-400 font-bold">
+              Natija: Yangi avlod muhandislari va startap asoschilari yetishadi!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: AI SAVODXONLIGI — NEYROTARMOQLAR LABI
+         ========================================== -->
+    <section id="ailab" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Neyrotarmoqlar Laboratoriyasi</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            AI Lab: Kelajak Kasblari Bugun Maktabda
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            Sun'iy intellekt davrida talab yuqori bo'lgan ko'nikmalarni maktab o'quv dasturiga qo'shimcha sifatida joriy etish.
+          </p>
+        </div>
+
+        <!-- 3 Holographic Frosted Glass Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Lab 1 -->
+          <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 border border-cyan-200/50 dark:border-cyan-500/20 shadow-xl shadow-cyan-500/5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-cyan-500/30 group-hover:rotate-6 transition-transform">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 mb-1">01 // KLUB</div>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mb-3">
+              Prompt Engineering Klubi
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+              Savolni to'g'ri berish san'ati — o'quvchilarga sun'iy intellektdan eng aniq, chuqur va sifatli ilmiy, texnik ma'lumotlarni olish hamda kontekst bilan ishlash texnikasini o'rgatish.
+            </p>
+            <div class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-angle-right text-cyan-500"></i>
+                <span>Zero-shot & Few-shot promptlar</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-angle-right text-cyan-500"></i>
+                <span>Murakkab mantiqiy zanjirlar (Chain-of-Thought)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lab 2 -->
+          <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 border border-purple-200/50 dark:border-purple-500/20 shadow-xl shadow-purple-500/5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-purple-500/30 group-hover:rotate-6 transition-transform">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400 mb-1">02 // MEDIA</div>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mb-3">
+              AI Visual Design & Media
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+              Generativ san'at vositalari orqali maktab gazetalari, taqdimotlar, ilmiy plakatlar va ijodiy rasmlarni sun'iy ong yordamida professional darajada yaratish mahorati.
+            </p>
+            <div class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-angle-right text-purple-500"></i>
+                <span>Midjourney va Canva AI dizayn</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-angle-right text-purple-500"></i>
+                <span>Maktab media guruhini AI bilan qurollantirish</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lab 3 -->
+          <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 border border-emerald-200/50 dark:border-emerald-500/20 shadow-xl shadow-emerald-500/5">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-emerald-500/30 group-hover:rotate-6 transition-transform">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 mb-1">03 // XAVFSIZLIK</div>
+            <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white mb-3">
+              Etik AI va Kiber-Xavfsizlik
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+              Shaxsiy ma'lumotlarni kiber-makonda himoyalash, neyrotarmoqlarda intellektual mulk qoidalariga rioya qilish va deepfake hamda feyk yangiliklarni haqiqiysidan ajratish.
+            </p>
+            <div class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-angle-right text-emerald-500"></i>
+                <span>Deepfake va dezinformatsiyani aniqlash</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-angle-right text-emerald-500"></i>
+                <span>Kiber-gigiyena va maxfiylik madaniyati</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: TUMAN MIQYOSIDAGI TASHABBUSLAR
+         ========================================== -->
+    <section id="bektemir" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-indigo-600 dark:text-cyan-400">
+            <i class="fa-solid fa-city"></i>
+            <span>Agar Men Bektemir Tumani Sardori Bo'lsam...</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Bektemirni Toshkentning Eng Ilg'or IT-Tumaniga Aylantirish Dasturi
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            Tumanning barcha maktablarini birlashtiruvchi 4 ta tizimli va o'lchanadigan tashabbus.
+          </p>
+        </div>
+
+        <!-- 4-Element Innovation Roadmap Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Initiative 1 -->
+          <div class="glass-panel p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all">
+            <div class="text-4xl font-extrabold font-mono text-cyan-500/20 group-hover:text-cyan-500/40 transition-colors mb-2">01</div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">
+              Bektemir Hackathon
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Tuman maktablari o'rtasida 24 soatlik amaliy dasturlash, veb-dizayn va sun'iy intellekt yechimlari marafonini yo'lga qo'yish.
+            </p>
+          </div>
+
+          <!-- Initiative 2 -->
+          <div class="glass-panel p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all">
+            <div class="text-4xl font-extrabold font-mono text-indigo-500/20 group-hover:text-indigo-500/40 transition-colors mb-2">02</div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-bridge-water"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">
+              Maktablararo Raqamli Ko'prik
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Kuchli IT salohiyatga ega o'quvchilar chekka maktablardagi tengdoshlariga bepul onlayn va oflayn mentorlik tizimini yaratish.
+            </p>
+          </div>
+
+          <!-- Initiative 3 -->
+          <div class="glass-panel p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all">
+            <div class="text-4xl font-extrabold font-mono text-emerald-500/20 group-hover:text-emerald-500/40 transition-colors mb-2">03</div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">
+              AI for Ecology & City
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Bektemir tumani ekologiyasi, tozaligi va maktab muammolarini tahlil qilib hal qiluvchi aqlli sun'iy intellekt botlari tanlovi.
+            </p>
+          </div>
+
+          <!-- Initiative 4 -->
+          <div class="glass-panel p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all">
+            <div class="text-4xl font-extrabold font-mono text-purple-500/20 group-hover:text-purple-500/40 transition-colors mb-2">04</div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-300 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-venus"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-2">
+              Tech-Qizlar Klasteri
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+              IT va sun'iy intellekt sohalarida tuman qizlari ishtirokini 50% ga yetkazish bo'yicha maxsus seminarlar, yopiq klub va master-klasslar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: DALILLAR VA JARAYON LAVHALARI — RAQAMLI GALEREYA
+         ========================================== -->
+    <section id="galereya" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+            <i class="fa-solid fa-camera-retro"></i>
+            <span>Raqamli Galereya</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Dalillar va Jarayon Lavhalari
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            O'quvchilarimizning dasturlash va sun'iy intellekt ko'rgazmalaridagi faol ishtiroki hamda yutuqlari.
+          </p>
+        </div>
+
+        <!-- Featured Big Exhibition Photo (IMAGE 3) -->
+        <div class="mb-10 relative group rounded-3xl overflow-hidden glass-panel border border-indigo-200/50 dark:border-cyan-500/30 shadow-2xl">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPTseKc_UMZcELhRDsdHrcMLCRpcSjdsDcaifJKyGO2rXsAjPdzG8cJNdYnxTbV5D1TXBS9TbqrkhxASaImx5FI0AqrezHNeeVH7UWJGD7GWD1aEQMaPgAtIKljRbG2o2TeGKgqhlGZbFyN08Qf1R4zrsotg8Max9NErLYX4ZpXWsKoX9lzKEjoRJNAq2DWdjxSbEz3fGfiLJUyzDcQYhIWrFTZKWhRrr1XVTWj_g8duBDZ4O_6psq" alt="Yoshlar AI loyihalari ko'rgazmasida" class="w-full h-auto object-cover max-h-[520px] transform group-hover:scale-102 transition-transform duration-700 aspect-[16/9]">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6 sm:p-10">
+            <div class="text-white max-w-2xl">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/80 text-white text-xs font-bold font-mono tracking-wider">TECH FAIR 2024</span>
+              <h3 class="text-xl sm:text-2xl font-bold font-display mt-2">
+                "Eco-Bot AI & Smart City" — Maktablararo Ko'rgazma Taqdimoti
+              </h3>
+              <p class="text-slate-200 text-xs sm:text-sm mt-1.5">
+                O'quvchilarimiz o'zlarining sun'iy intellekt va robototexnika loyihalarini hakamlar hay'ati oldida mustaqil himoya qilmoqdalar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Interactive Glass Media Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-panel p-6 rounded-3xl border border-indigo-100 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-3 text-cyan-600 dark:text-cyan-400 font-bold text-sm">
+              <i class="fa-solid fa-code-merge text-lg"></i>
+              <span>Ko'rgazma 1</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-2">Prompt Engineering Darsi</h4>
+            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+              O'quvchilarning AI bilan birgalikdagi ilk mustaqil loyihalari, matn va dizayn generatsiyasidagi ijodiy natijalari.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-3xl border border-indigo-100 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-3 text-purple-600 dark:text-purple-400 font-bold text-sm">
+              <i class="fa-solid fa-laptop-code text-lg"></i>
+              <span>Ko'rgazma 2</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-2">Web-Dasturlash Amaliyoti</h4>
+            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+              Kompyuter ekranlarida real vaqtda kod yozish va tayyor sahifalarni internet tarmog'iga deploy qilish jarayoni.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-3xl border border-indigo-100 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-3 text-emerald-600 dark:text-emerald-400 font-bold text-sm">
+              <i class="fa-solid fa-shield-cat text-lg"></i>
+              <span>Ko'rgazma 3</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mb-2">Kiber-Xavfsizlik Seminari</h4>
+            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+              O'quvchilarning faol savol-javoblari, parollar mustahkamligi va fishing hujumlariga qarshi hushyorlik darslari.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: BARCHA KOORDINATORLIKLAR BILAN INTEGRATSIYA — IT SINERGIYASI
+         ========================================== -->
+    <section id="ekotizim" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-indigo-600 dark:text-cyan-400">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>IT Sinergiyasi</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            Texnologiya Qanday Qilib Barcha Yo'nalishlarni Kuchaytiradi?
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            IT va AI alohida orolcha emas — u boshqa barcha yo'nalishlarning samarasini 10 barobargacha oshiruvchi universal dvigateldir.
+          </p>
+        </div>
+
+        <!-- Orbital Ecosystem Interactive View -->
+        <div class="relative glass-panel rounded-3xl p-8 sm:p-12 border border-indigo-200/50 dark:border-slate-800 overflow-hidden">
+          <!-- Center Node -->
+          <div class="text-center max-w-md mx-auto mb-10">
+            <div class="inline-flex p-4 rounded-3xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-purple-600 text-white shadow-xl shadow-indigo-500/30 mb-3 animate-bounce" style="animation-duration: 3s;">
+              <i class="fa-solid fa-atom text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-display text-slate-900 dark:text-white">
+              Markazda: IT & Sun'iy Intellekt
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              Barcha yo'nalishlar uchun yagona raqamli infratuzilma va tahliliy markaz.
+            </p>
+          </div>
+
+          <!-- Connected Satellite Nodes -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Node 1: IT + Ta'lim -->
+            <div class="p-6 rounded-2xl glass-panel border border-cyan-400/30 hover:scale-102 transition-transform">
+              <div class="flex items-center gap-3 mb-3 text-cyan-600 dark:text-cyan-400">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h4 class="font-bold font-display text-base text-slate-900 dark:text-white">IT + Ta'lim</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Har bir o'quvchining o'zlashtirish darajasiga moslashtirilgan interaktiv testlar, bilimlarni avtomatik baholash va 24/7 ishlaydigan sun'iy intellekt repetitori.
+              </p>
+            </div>
+
+            <!-- Node 2: IT + Ekologiya -->
+            <div class="p-6 rounded-2xl glass-panel border border-emerald-400/30 hover:scale-102 transition-transform">
+              <div class="flex items-center gap-3 mb-3 text-emerald-600 dark:text-emerald-400">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h4 class="font-bold font-display text-base text-slate-900 dark:text-white">IT + Ekologiya</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Sensorli aqlli chiqindi saralash qutilari, maktab energiyasini tejash algoritmlari va hudud tozaligini sun'iy ong yordamida avtomatik monitoring qilish.
+              </p>
+            </div>
+
+            <!-- Node 3: IT + Liderlik -->
+            <div class="p-6 rounded-2xl glass-panel border border-purple-400/30 hover:scale-102 transition-transform">
+              <div class="flex items-center gap-3 mb-3 text-purple-600 dark:text-purple-400">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-users-gear"></i>
+                </div>
+                <h4 class="font-bold font-display text-base text-slate-900 dark:text-white">IT + Liderlik</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Barcha maktab va tuman sardorlari uchun yagona raqamli axborot portali, avtomatik hisobotlar va vazifalar boshqaruvi tizimi (Trello / Notion uslubida).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 9: 100 KUNLIK HARAKAT REJASI — RAQAMLI SAKRASH
+         ========================================== -->
+    <section id="rejalar" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+            <i class="fa-solid fa-timeline"></i>
+            <span>Raqamli Sakrash</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-display">
+            100 Kunlik Harakat Rejasi: G'oyadan — Dasturiy Amalga
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+            Aniq sanalar, o'lchanadigan mezonlar va bosqichma-bosqich taraqqiyot jadvali.
+          </p>
+        </div>
+
+        <!-- Vertical Neon Timeline -->
+        <div class="max-w-4xl mx-auto relative">
+          <!-- Glowing Center line -->
+          <div class="absolute left-6 md:left-1/2 top-4 bottom-4 -translate-x-1/2 w-1 bg-gradient-to-b from-cyan-400 via-indigo-500 to-purple-600 shadow-[0_0_12px_rgba(56,189,248,0.5)]"></div>
+
+          <div class="space-y-12 relative">
+            <!-- Step 1 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+              <div class="w-full md:w-1/2 md:text-right pl-14 md:pl-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/70 text-cyan-700 dark:text-cyan-300 text-xs font-mono font-bold mb-2">1–25 KUN</span>
+                <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Audit & Xaritalashtirish</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">
+                  Bektemir tumanidagi barcha maktab kompyuter sinflari holati, mavjud internet tezligi va IT ga qiziquvchi faol o'quvchilar bazasini shakllantirish.
+                </p>
+              </div>
+              <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-cyan-400 border-4 border-white dark:border-slate-900 shadow-[0_0_15px_rgba(56,189,248,1)] z-10 flex items-center justify-center text-[10px] text-slate-900 font-bold">1</div>
+              <div class="hidden md:block w-1/2"></div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+              <div class="hidden md:block w-1/2"></div>
+              <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-indigo-500 border-4 border-white dark:border-slate-900 shadow-[0_0_15px_rgba(99,102,241,1)] z-10 flex items-center justify-center text-[10px] text-white font-bold">2</div>
+              <div class="w-full md:w-1/2 pl-14 md:pl-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 text-xs font-mono font-bold mb-2">26–50 KUN</span>
+                <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Master-Klasslar Turruri</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">
+                  "Sun'iy intellekt — bizning do'stimiz" shiori ostida tuman maktablari bo'ylab mahorat darslarini boshlash va har bir maktabda IT-yacheykalarini tuzish.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+              <div class="w-full md:w-1/2 md:text-right pl-14 md:pl-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 text-xs font-mono font-bold mb-2">51–75 KUN</span>
+                <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">Bektemir AI & Coding Cup</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">
+                  Maktablararo birinchi rasmiy "Bektemir AI & Coding Cup" turnirini tashkil etish va eng yaxshi 10 ta o'quvchi loyihasini aniqlash.
+                </p>
+              </div>
+              <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-purple-500 border-4 border-white dark:border-slate-900 shadow-[0_0_15px_rgba(168,85,247,1)] z-10 flex items-center justify-center text-[10px] text-white font-bold">3</div>
+              <div class="hidden md:block w-1/2"></div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+              <div class="hidden md:block w-1/2"></div>
+              <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-pink-500 border-4 border-white dark:border-slate-900 shadow-[0_0_15px_rgba(236,72,153,1)] z-10 flex items-center justify-center text-[10px] text-white font-bold">4</div>
+              <div class="w-full md:w-1/2 pl-14 md:pl-0">
+                <span class="inline-block px-3 py-1 rounded-full bg-pink-100 dark:bg-pink-950/70 text-pink-700 dark:text-pink-300 text-xs font-mono font-bold mb-2">76–100 KUN</span>
+                <h3 class="text-xl font-bold font-display text-slate-900 dark:text-white">IT-Park Integratsiyasi</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">
+                  Eng sara startap va loyihalarni IT-Park hamda mahalliy texnologik kompaniyalar e'tiboriga taqdim etish, amaliyot va grantlarni jalb qilish.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 10: XULOSA VA BOSH CHAQIRIQ — KELAJAKNI KODLAYMIZ!
+         ========================================== -->
+    <section id="chaqiriq" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <!-- Glow ambient background -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-cyan-500/10 pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 border border-cyan-400/30">
+          <i class="fa-solid fa-flag-checkered"></i>
+          <span>Kelajakni Kodlaymiz!</span>
+        </div>
+
+        <!-- Big Inspiring Quote -->
+        <blockquote class="text-2xl sm:text-3xl md:text-5xl font-black font-display tracking-tight leading-tight max-w-4xl mx-auto">
+          «Kelajakni kutish kerak emas — uni o'z bilimimiz, kodimiz va <span class="gradient-text">aql-idrokimiz bilan bugun yaratishimiz mumkin!</span>»
+        </blockquote>
+
+        <!-- Yakuniy Murojaat -->
+        <div class="max-w-2xl mx-auto p-6 sm:p-8 rounded-3xl glass-panel neon-border shadow-2xl">
+          <p class="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed font-medium">
+            "Men — <strong class="text-indigo-600 dark:text-cyan-300">Eshmurotova Kumushoy</strong>, Bektemir tumani yoshlarini raqamli dunyoning erkin va kuchli yetakchilariga aylantirishga, har bir o'quvchiga IT va AI olamiga yo'l ochishga butun qalbim bilan tayyorman!"
+          </p>
+        </div>
+
+        <!-- Interactive Badges -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <span class="px-4 py-2 rounded-xl glass-pill text-xs font-mono font-bold text-cyan-600 dark:text-cyan-300 shadow-sm border border-cyan-400/30 hover:scale-105 transition-transform cursor-pointer">
+            # Sun'iy Intellekt
+          </span>
+          <span class="px-4 py-2 rounded-xl glass-pill text-xs font-mono font-bold text-indigo-600 dark:text-indigo-300 shadow-sm border border-indigo-400/30 hover:scale-105 transition-transform cursor-pointer">
+            # Dasturlash & Web
+          </span>
+          <span class="px-4 py-2 rounded-xl glass-pill text-xs font-mono font-bold text-purple-600 dark:text-purple-300 shadow-sm border border-purple-400/30 hover:scale-105 transition-transform cursor-pointer">
+            # Kiber-Kelajak
+          </span>
+          <span class="px-4 py-2 rounded-xl glass-pill text-xs font-mono font-bold text-emerald-600 dark:text-emerald-300 shadow-sm border border-emerald-400/30 hover:scale-105 transition-transform cursor-pointer">
+            # Raqamli Yetakchi
+          </span>
+        </div>
+
+        <!-- Final Action Button & Contact info -->
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#hero" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-bold text-base shadow-xl shadow-indigo-500/30 hover:shadow-cyan-400/50 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Boshiga qaytish</span>
+          </a>
+        </div>
+
+        <!-- Minimal Sub-footer note -->
+        <div class="pt-12 text-xs text-slate-500 dark:text-slate-400 font-medium">
+          348-maktab & Bektemir tumani IT va Sun'iy Intellekt Koordinatori Eshmurotova Kumushoyning interaktiv taqdimot portali © 2025
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive JavaScript logic -->
+  <script>
+    // 1. Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('progressBar');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+
+    // 2. Dark / Light Mode Toggle
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElem = document.documentElement;
+
+    // Check system preference or default to light with sleek mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      htmlElem.classList.add('dark');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      htmlElem.classList.toggle('dark');
+      if (htmlElem.classList.contains('dark')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    });
+  </script>
+</body>
+</html>
